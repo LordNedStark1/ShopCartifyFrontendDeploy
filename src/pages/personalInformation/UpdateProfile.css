@@ -1,0 +1,101 @@
+.PersonalInformation {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	justify-content: space-around;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #ff9b50;
+	align-items: center;
+  }
+  
+  /* Style for section headers */
+  h3 {
+	margin-top: 10px;
+  }
+  
+  /* Style for text input fields */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  /* Style for switches */
+  .switch {
+	display: inline-block;
+	position: absolute;
+	align-items: center;
+	margin-left: 230px;
+	margin-bottom: 10%;
+  }
+  
+  .switch input[type="checkbox"] {
+	display: none;
+  }
+
+  .Promotions{
+	margin-bottom: 10px;
+  }
+  
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 34px;
+  }
+  
+  .slider:before {
+	position: absolute;
+	/* display:inline-block; */
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 2px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 50%;
+  }
+  
+  .switch input:checked + .slider {
+	background-color: #107cd4;
+  }
+  
+  .switch input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .switch input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+  }
+
+  button[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 5px 10px; /* Adjust the padding to make it smaller */
+	border: none;
+	width: 50vh;
+	align-self: center;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 13px; /* Adjust the font size as needed */
+  }
+  
+  button[type="submit"]:hover {
+	background-color: #45a049;
+  }
+  

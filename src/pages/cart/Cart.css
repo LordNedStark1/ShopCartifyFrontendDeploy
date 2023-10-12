@@ -1,0 +1,105 @@
+.items {
+	width: 100%;
+	height: 100vh;
+	background: #ff9b50;
+	display: flex;
+	justify-content: space-around;
+	justify-self: center;
+	align-items: center;
+}
+
+.items form {
+	width: 450px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	padding: 30px 30px;
+	border-radius: 10px;
+	background: white;
+	box-shadow: 5px 10px #d8d3d3;
+}
+
+.items h2 {
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+
+.items p {
+	text-align: center;
+	font-size: 14px;
+}
+
+.product-div {
+	border: 1px solid rgb(240, 235, 235);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	border-radius: 10px;
+	height: 80px;
+	margin: 20px 0px;
+	gap: 20px;
+}
+
+.info {
+	margin: 0 0 22px 0;
+}
+
+.product-div .info div {
+	font-size: 12px;
+}
+.product-div .info .card-no {
+	font-size: 16px;
+	letter-spacing: 3px;
+}
+
+.add-cards {
+	background-color: #ff9b50;
+	width: 100px;
+	height: 30px;
+	border-radius: 20px;
+	border: none;
+	color: #fff;
+	margin-top: 10px;
+}
+
+.add-cards:hover {
+	background-color: #517405;
+}
+
+.checkout {
+	width: 100%;
+	height: 70px;
+	border-radius: 40px;
+	background-color: #517405;
+	color: aliceblue;
+	margin-top: 30px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.product-div {
+	display: flex;
+}
+.increment-decrement-button {
+	height: 26px;
+	width: 28px;
+	border-radius: 100px;
+	color: #9b9b9b;
+	border: 1px solid gray;
+	margin: 0 4px 0 4px;
+}
+.remove {
+	color: #ff9b50;
+	border: none;
+	font-weight: 600;
+}
+
+.total-div {
+	display: flex;
+}
+.total-amount {
+	margin-left: 55%;
+}

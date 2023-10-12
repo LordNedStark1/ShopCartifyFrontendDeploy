@@ -1,0 +1,41 @@
+.total-div{
+    width: 100%;
+	height: 100vh;
+	background-color: #ff9b50;
+    /* /* display: flex; */
+	justify-content: space-around;
+	justify-self: center;
+	align-items: center;
+}
+.productDisplayDiv{
+    border:1px solid rgb(211, 211, 233);
+    width: 400px;
+    height: 400px;
+    background-color: aliceblue;
+    border-radius:8px;
+}
+.productDisplayDiv p{
+    margin-left: 150px;
+    margin-top: 30px;
+    font-size:larger;
+}
+button{
+    width: 240px;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 100px;
+    cursor: pointer;
+    color: #ff9b50;
+}
+.productPrice{
+    /* justify-content: space-between; */
+    /* width: 0px; */
+}
+.productPrice h3{
+margin-top: 30px;
+margin-left:150px;
+/* margin-left: 70px; */
+}
+.p{
+    
+}

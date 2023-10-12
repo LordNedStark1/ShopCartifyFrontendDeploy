@@ -1,0 +1,172 @@
+.landing-page {
+	height: auto;
+	width: 100%;
+}
+
+.hero {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100vh;
+	height: auto;
+	background-image: linear-gradient(
+			rgba(0, 0, 0, 0.185),
+			rgba(0, 0, 0, 0.425)
+		),
+		url(../../assets/images/backgroundImg2.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.hero-background {
+	background: rgba(0, 0, 0, 0.089);
+	width: 100%;
+	display: flex;
+}
+.hero .left {
+	width: 50%;
+	height: 100vh;
+	padding-top: 290px;
+	padding-left: 120px;
+}
+
+.hero .left .content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: white;
+}
+
+.hero .left .content h2 {
+	width: 400px;
+	font-size: 50px;
+	font-weight: 800;
+}
+
+.content span {
+	color: #ff9b50;
+}
+.hero .left .content p {
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-weight: 800;
+}
+
+.hero .left .content button {
+	width: 150px;
+	height: 50px;
+	font-size: 16px;
+	border: none;
+	color: white;
+	background: #ff9b50;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: 800;
+}
+
+.hero .left .content button:hover {
+	background: #517405;
+}
+
+.hero .right {
+	width: 50%;
+	height: 100vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.hero .right img {
+	width: 400px;
+	height: 400px;
+	background: white;
+	border-radius: 10px;
+	margin-top: 150px;
+}
+
+.qrcode {
+	background-color: rgb(175, 175, 175);
+	margin-top: 7rem;
+	border-radius: 20%;
+	height: 48vh;
+}
+
+@media only screen and (max-width: 960px) {
+	.hero {
+		flex-direction: column;
+	}
+
+	.hero .left {
+		width: 100%;
+		height: 100vh;
+		padding: 50px;
+		padding-top: 250px;
+		padding-left: 50px;
+		text-align: center;
+	}
+
+	.hero .left .content h2 {
+		width: auto;
+	}
+
+	.hero .left .content button {
+		margin: 0 auto;
+	}
+
+	.hero .right {
+		width: 100%;
+		height: 100vh;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    .hero {
+        flex-direction: column; 
+        height: auto; 
+        padding-top: 0; 
+    }
+
+    .hero .left {
+        width: 100%; 
+        padding: 20px; 
+        text-align: center; 
+    }
+
+    .hero .left .content h2 {
+        font-size: 30px; 
+        width: auto; 
+        font-weight: 600;
+    }
+
+    .hero .left .content p {
+        font-size: 16px; 
+        margin-bottom: 10px; 
+    }
+
+    .hero .left .content button {
+        width: 150px;
+        height: 40px; 
+        font-size: 14px; 
+    }
+
+    .hero .right {
+        width: 100%; 
+        text-align: center; 
+        margin-top: 20px; 
+    }
+
+    .hero .right img {
+        width: 80%; 
+        height: auto; 
+        margin-top: 20px; 
+    }
+
+    .qrcode {
+        margin-top: 2rem; 
+        border-radius: 10px; 
+        height: auto; 
+    }
+}
+

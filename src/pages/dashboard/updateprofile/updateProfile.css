@@ -1,0 +1,156 @@
+.update-profile {
+	width: 100%;
+	height: 85vh;
+	display: flex;
+	justify-content: space-around;
+	justify-self: center;
+	align-items: center;
+}
+
+.update-profile form {
+	width: 450px;
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	padding: 40px 30px;
+	border-radius: 10px;
+	background: white;
+	box-shadow: 5px 10px #d8d3d3;
+}
+
+.update-profile form input {
+	width: 100%;
+	height: 60px;
+	padding: 0 15px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	font-size: 14px;
+	border: 1px solid gainsboro;
+}
+
+.update-profile h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+
+.update-profile .promotion {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.advertising {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.chngpswd {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.chngpswd a {
+	text-decoration: none;
+	color: grey;
+}
+
+.update-profile .promo {
+	width: 50px;
+	height: 20px;
+}
+
+.update-profile .chngpswd {
+	margin: 5px 0;
+	text-decoration: none;
+}
+
+.update-profile .notification {
+	margin: 10px 0;
+}
+
+.update-profile button {
+	width: 100%;
+	height: 50px;
+	background: #ff9b50;
+	color: white;
+	border-radius: 20px;
+	margin: 20px auto;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.update-profile button:hover {
+	background-color: #517405;
+}
+
+@media only screen and (max-width: 480px) {
+	.update-profile {
+		height: auto;
+		padding: 10px;
+		justify-content: center;
+	}
+
+	.update-profile form {
+		width: 90%;
+		height: auto;
+		padding: 20px;
+	}
+
+	.update-profile form input {
+		height: 40px;
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+
+	.update-profile h2 {
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	.update-profile .promotion,
+	.advertising,
+	.chngpswd {
+		flex-direction: column;
+		align-items: flex-start;
+		margin: 10px 0;
+	}
+
+	.update-profile .promo {
+		width: 30px;
+		height: 15px;
+	}
+
+	.update-profile .notification {
+		margin: 10px 0;
+	}
+
+	.update-profile button {
+		height: 40px;
+		margin: 10px auto;
+		font-size: 16px;
+	}
+}
+
+/* @media (max-width: 768px) {
+	.update-profile {
+		flex-direction: column;
+		height: auto;
+		padding: 20px;
+		align-items: flex-start;
+	}
+
+	.update-profile form {
+		width: 100%;
+		height: auto;
+		padding: 20px;
+		border-radius: 0;
+	}
+
+	.update-profile form input {
+		margin-bottom: 10px;
+	}
+} */

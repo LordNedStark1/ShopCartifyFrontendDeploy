@@ -1,0 +1,58 @@
+.Supermarket {
+	width: 100%;
+	height: 100vh;
+	background: #ff9b50;
+	display: flex;
+	justify-content: space-around;
+	justify-self: center;
+	align-items: center;
+}
+.Supermarket form {
+	width: 450px;
+	height: 550px;
+	display: flex;
+	flex-direction: column;
+	padding: 50px 30px;
+	border-radius: 10px;
+	background: white;
+}
+
+.Supermarket form h2 {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.Supermarket form input {
+	height: 60px;
+	font-size: 15px;
+	margin-bottom: 20px;
+	padding: 0 20px;
+	border-radius: 3px;
+	border: 1px solid grey;
+}
+
+.Supermarket form p {
+	color: black;
+	text-align: end;
+}
+
+.Supermarket form button {
+	width: 100%;
+	height: 50px;
+	background: #ff9b50;
+	color: white;
+	border-radius: 20px;
+	margin: 20px auto;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700;
+}
+.Supermarket form button:hover {
+	background: #517405;
+}
+
+.Supermarket select {
+	width: 100px;
+}
