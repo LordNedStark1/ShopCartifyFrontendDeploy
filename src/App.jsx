@@ -23,7 +23,7 @@ import Cart from "./pages/cart/Cart";
 import Scan from "./pages/scan/Scan";
 import AddProduct from "./pages/addProduct/AddProduct";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
-import BackToScan from "./pages/scan/backToScan";
+// import BackToScan from "./pages/scan/backToScan";
 
 export default function App() {
 	return (
@@ -93,7 +93,7 @@ export default function App() {
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/scan" element={<Scan />} />
 					<Route path="/addProduct" element={<AddProduct />} />
-					<Route path="/BackToScan" element={<BackToScan />} />
+					{/* <Route path="/BackToScan" element={<BackToScan />} /> */}
 				</Routes>
 			</BrowserRouter>
 		</div>
