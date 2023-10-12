@@ -11,7 +11,7 @@ let products = "products";
 
 const BackToScan = () => {
 	const navigation = useNavigate();
-	const [error, setError] = useState();
+	// const [error, setError] = useState();
 	const [productDetails, setProductDetails] = useState([]);
 
 	const findProduct = useCallback(async () => {
@@ -27,7 +27,7 @@ const BackToScan = () => {
 			setProductDetails(response);
 		} catch (error) {
 			
-			setError(error.response.data.data);
+			// setError(error.response.data.data);
 			console.log(error.response.data.data);
 		}
 	}, []);
