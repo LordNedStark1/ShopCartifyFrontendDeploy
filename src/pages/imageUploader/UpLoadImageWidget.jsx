@@ -1,7 +1,4 @@
 import {useEffect, useRef} from "react";
-// import { get_CLOUDINARY_API_NAME, get_CLOUDINARY_UPLOAD_PRESET } from "../../../securedFiles/.CloudinarySecrets";
-// require('dotenv').config();
-
 
 function UploadWidget() {
     

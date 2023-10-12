@@ -75,7 +75,7 @@ const AddProduct = () => {
 						width="300" 
 						height="200"
 					/>
-				<div className="upload"><UploadWidget/></div>
+				{/* <div className="upload"><UploadWidget/></div> */}
 				<button
 					type="submit"
 					className="addProduct"
