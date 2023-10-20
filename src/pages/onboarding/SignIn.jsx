@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setUserId } from "../../redux/features/dashboardSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BASE_URL from "../../url/Url";
 
 const SignIn = () => {
 	const navigate = useNavigate();
@@ -37,9 +38,10 @@ const SignIn = () => {
 			setBtnTitle("Submitting...");
 
 			const response = await axios.post(
-				"http://localhost:1961/api/v1/auth/login",
+				BASE_URL+"/api/v1/auth/login",
 				user
 			);
+			console.log("submitted");
 			console.log(response);
 			if (response.status === 200) {
 				localStorage.setItem(

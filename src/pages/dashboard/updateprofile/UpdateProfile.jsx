@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./updateProfile.css";
+import Success from "../../success/Success";
+import BASE_URL from "../../../url/Url";
 // import { useSelector } from "react-redux";
 
 const UpdateProfile = () => {
@@ -22,7 +24,7 @@ const UpdateProfile = () => {
 
 	const getUserById = async () => {
 		const res = await axios.get(
-			`http://localhost:8080/api/v1/user/find-by-id/${id}`
+			`${BASE_URL}/api/v1/user/find-by-id/${id}`
 		);
 		console.log(res);
 
@@ -33,6 +35,9 @@ const UpdateProfile = () => {
 			lastName: res.data.lastName,
 			email: res.data.email,
 		}));
+		console.log("Success");
+		console.log(id);
+		console.log(user);
 	};
 
 	const handleChange = (e) => {

@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/applogo.png";
 import "./Reusables.css";
 import { useRef } from "react";
+import "./NavBar.css"
 
 const NavBar = () => {
 	const navigate = useNavigate();
@@ -67,14 +68,14 @@ const NavBar = () => {
 						</div>
 					</div>
 				) : (
-					<>
+					<div className="logo-signUpBar">
 						<button className="loginButt" onClick={() => navigate("/login")}>
 							Login
 						</button>
 						<button className="createButt" onClick={() => navigate("/register")}>
 							Sign Up
 						</button>
-					</>
+					</div>
 				)}
 				<div className="burger-menu">&#9776;</div>
 			</div>
