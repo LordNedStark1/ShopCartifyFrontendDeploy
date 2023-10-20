@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import BASE_URL from "../../url/Url";
 import { ToastContainer, toast } from "react-toastify";
-import UploadWidget from "../imageUploader/UpLoadImageWidget";
+// import UploadWidget from "../imageUploader/UpLoadImageWidget";
 // import UploadWidget from "../imageUploader/UpLoadImageWidget";
 
 const AddProduct = () => {
