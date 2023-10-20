@@ -1,4 +1,7 @@
 import {useEffect, useRef} from "react";
+import { get_CLOUDINARY_API_NAME, get_CLOUDINARY_UPLOAD_PRESET } from "../../../securedFiles/.CloudinarySecrets";
+// require('dotenv').config();
+
 
 function UploadWidget() {
     
@@ -9,10 +12,8 @@ function UploadWidget() {
         console.log(cloudinaryRef.current)
         widgetRef.current = cloudinaryRef.current.createUploadWidget({
             
-            // cloudName:  get_CLOUDINARY_API_NAME(),
-            // uploadPreset: get_CLOUDINARY_UPLOAD_PRESET()
-            cloudName:  "dhhhqruoy",
-            uploadPreset:  "ShopCartify"
+            cloudName:  get_CLOUDINARY_API_NAME(),
+            uploadPreset: get_CLOUDINARY_UPLOAD_PRESET()
             // uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET
         },  function (error, result) {
             if (!error && result && result.event === 'success') {

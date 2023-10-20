@@ -3,6 +3,7 @@ import "./registerSupermarket.css";
 import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import BASE_URL from "../../url/Url";
 
 const RegisterSupermarket = () => {
 	const [supermarket, setSupermarket] = useState({
@@ -11,7 +12,7 @@ const RegisterSupermarket = () => {
 		supermarketLocation: "",
 		registeredUserId: localStorage.getItem("userId"),
 	});
-	const [btnTitle, setBtnTitle] = useState("Sign Up");
+	const [btnTitle, setBtnTitle] = useState("SIGN UP");
 
 	const navigate = useNavigate();
 
@@ -38,11 +39,11 @@ const RegisterSupermarket = () => {
 			setBtnTitle("Submitting...");
 
 			const response = await axios.post(
-				"http://localhost:8080/api/v1/supermarketAdminController/registerSupermarketAdmin",
+				BASE_URL+"/api/v1/supermarketAdminController/registerSupermarketAdmin",
 				supermarket
 			);
 			console.log(response);
-			if (response.status === 201) {
+			if (response.status === 201|| response.status === 200) {
 				toast.success("Account created successfully");
 			}
 			setTimeout(() => {
@@ -50,9 +51,12 @@ const RegisterSupermarket = () => {
 				navigate("/verify-email");
 			}, 2000);
 		} catch (error) {
-			setBtnTitle(btnTitle);
+			setBtnTitle("Registration Failed Try Again");
 			toast.error(error.message);
 		}
+		setBtnTitle("SIGN UP");
+		navigate("/verify-email");
+
 	};
 
 	return (
@@ -96,7 +100,7 @@ const RegisterSupermarket = () => {
 							<span>Login </span>
 						</Link>
 					</p>
-					<button type="submit">SIGN UP</button>
+					<button type="submit"> {btnTitle} </button>
 				</form>
 			</div>
 		</>

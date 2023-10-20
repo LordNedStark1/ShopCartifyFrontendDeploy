@@ -2,17 +2,21 @@ import { useNavigate } from "react-router-dom";
 import "./AddProduct.css";
 import { useState } from "react";
 import axios from "axios";
+import BASE_URL from "../../url/Url";
+import { ToastContainer, toast } from "react-toastify";
 import UploadWidget from "../imageUploader/UpLoadImageWidget";
+// import UploadWidget from "../imageUploader/UpLoadImageWidget";
 
 const AddProduct = () => {
 	const navigate = useNavigate();
 	const [error, setError] = useState();
+	const [btnTitle, setBtnTitle] = useState("ADD PRODUCT");
 	const [product, setProduct] = useState({
 		productName: "",
 		productPrice: 0.0,
 		productDescription: "",
 		productImageUrl: "",
-		supermarketCode: "Ibiza",
+		supermarketCode: "",
 	});
 
 	const handleChange = (e) => {
@@ -25,26 +29,35 @@ const AddProduct = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setBtnTitle("Processing ...")
 
 		product.productImageUrl = sessionStorage.getItem("recentlyUploadedImage")
 
 		try {
 			const response = await axios.post(
-				"http://localhost:1961/api/v1/productController/addNewProduct",
+				BASE_URL +"/api/v1/productController/addNewProduct",
 				product
 			);
-			alert(response.data.data);
+			setBtnTitle("Adding New Product... ")
+			toast.success("Account created successfully");
 			console.log(response.data.data);
 
+			setBtnTitle("SUCCESS! ")
 			navigate("/addProduct");
 		} catch (error) {
+			setBtnTitle("FAILED!!!")
+			setBtnTitle("Add Product")
+			
 			setError(error.response.data.data);
 			console.log(error.response.data.data);
+			
+			
 		}
-	};
 	
+	}
 	return (
 		<div className="wrapper">
+			<ToastContainer />
 		<div className="product">
 			<form onSubmit={handleSubmit}>
 				<h2>Product</h2>
@@ -61,13 +74,19 @@ const AddProduct = () => {
 					type="text"
 					placeholder="Product Price"
 				/>
+			
 				<textarea
 					name="productDescription"
 					onChange={handleChange}
 					type="text"
 					placeholder="product Description"
 					className="productDescription"
-				/>
+				/>	<input
+				name="supermarketCode"
+				onChange={handleChange}
+				type="text"
+				placeholder="supermarketCode"
+			/>
 					<img className="picture"
 						src={sessionStorage.getItem("recentlyUploadedImage")} // Replace with the URL of your image
 						alt="Description of the image"
@@ -81,7 +100,7 @@ const AddProduct = () => {
 					className="addProduct"
 					// onClick={() => navigate("dashboard")}
 				>
-					Add Product
+					{btnTitle}
 				</button>
 			</form>
 		</div>
