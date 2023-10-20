@@ -3,30 +3,32 @@ import "./Cart.css";
 import cardLogo from "../../assets/images/cardLogo.png";
 import { useNavigate } from "react-router";
 
-const items = [
-	{
-		image: cardLogo,
-		desc: "product desc",
-		price: 250,
-		productName: "Coke",
-	},
-	{
-		image: cardLogo,
-		desc: "product desc",
-		price: 100,
-		productName: "Water",
-	},
-	{
-		image: cardLogo,
-		desc: "product desc",
-		price: 4500,
-		productName: "Pizza",
-	},
-];
-
+// const items = [
+// 	{
+// 		image: cardLogo,
+// 		desc: "product desc",
+// 		price: 250,
+// 		productName: "Coke",
+// 	},
+// 	{
+// 		image: cardLogo,
+// 		desc: "product desc",
+// 		price: 100,
+// 		productName: "Water",
+// 	},
+// 	{
+// 		image: cardLogo,
+// 		desc: "product desc",
+// 		price: 4500,
+// 		productName: "Pizza",
+// 	},
+// ];
+const products = "products";
 const Cart = () => {
 	const [total, setTotal] = useState(0.0);
+	const [items, setItems] = useState([]);
 	const [quantity, setQuantity] = useState(Array(items.length).fill(0));
+
 
 	const navigate = useNavigate();
 
@@ -34,13 +36,25 @@ const Cart = () => {
 		calculateTotal();
 	}, [quantity]);
 
-	const increment = (index) => {
-		const updatedQuantity = [...quantity];
-		updatedQuantity[index]++;
-		setQuantity(updatedQuantity);
+	useEffect(() => {
+		fetchVirtualCart();
+	}, []);
+
+	const fetchVirtualCart = () => {
+		const virtualCart  = JSON.parse(sessionStorage.getItem(products))
+		console.log(virtualCart);
+		setItems(virtualCart)
 	};
 
 	const decrement = (index) => {
+		if (quantity[index] > 0) {
+			const updatedQuantity = [...quantity];
+			updatedQuantity[index]--;
+			setQuantity(updatedQuantity);
+		}
+	};
+	
+	const increment = (index) => {
 		if (quantity[index] > 0) {
 			const updatedQuantity = [...quantity];
 			updatedQuantity[index]--;
@@ -89,12 +103,13 @@ const Cart = () => {
 						</div>
 
 						<div className="info">
-							<div>Expires {item.productName}</div>
-							<div> {item.desc}</div>
+							<div>Product Name : {item.productName}</div>
+							<div>Product Description : {item.productDescription}</div>
+							{/* <div>product image : {item.productQrCodeUrl}</div> */}
 						</div>
 
 						<div className="price-increment-section">
-							<div className="price"> {item.price}</div>
+							<div className="price">product Price : {item.productPrice}</div>
 
 							<div className="increment-section">
 								<button
